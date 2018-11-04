@@ -15,9 +15,9 @@ function map(array, fn) {
 
 function reduce(array, fn, initial) {
     var x = initial || array[0],
-        i = initial ? 0 : 1;
-
-    for (; i < array.length; i++) {
+       i = 0;
+       if (!initial) {i = 1;}
+       for (; i < array.length; i++) {
         x = fn(x, array[i], i, array);
     }
 
